@@ -1,11 +1,11 @@
-const { PUBLIC_KEY } = process.env;
+const { PUBLIC_KEY, CONTRACT_ADDRESS } = process.env;
 
 const hre = require("hardhat");
 
 async function burn(amount) {
     const CraigCoin = await hre.ethers.getContractFactory("CraigCoin");
 
-    const craigCoin = await CraigCoin.attach("0x8898e15bd345e4481567e2c4663b9102e6b305dc"); 
+    const craigCoin = await CraigCoin.attach(CONTRACT_ADDRESS); 
 
     console.log("Burning 10 CraigCoin...");
 
