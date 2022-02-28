@@ -6,7 +6,7 @@ async function main() {
     console.log("Account balance:", (await deployer.getBalance()).toString());
 
     const Token = await ethers.getContractFactory("CraigCoin");
-    const token = await Token.deploy();
+    const token = await Token.deploy(deployer.address);
 
     console.log("Token address:", token.address);
 }
